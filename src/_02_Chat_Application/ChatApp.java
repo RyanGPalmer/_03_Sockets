@@ -1,9 +1,11 @@
 package _02_Chat_Application;
 
-/*
- * Using the Click_Chat example, write an application that allows a server computer to chat with a client computer.
- */
+import static javax.swing.JOptionPane.*;
 
 public class ChatApp {
-
+	public static void main(String[] args) {
+		int response = showConfirmDialog(null, "Would you like to host a connection?", "Chat App", YES_NO_OPTION);
+		if (response == YES_OPTION) new ChatGUI("Chat Server", new ChatServer()).start();
+		else new ChatGUI("Chat Client", new ChatClient()).start();
+	}
 }
